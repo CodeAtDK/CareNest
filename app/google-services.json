@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1053168322468",
+    "project_id": "carenest-48c4e",
+    "storage_bucket": "carenest-48c4e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053168322468:android:d478af492a3cee0d59e331",
+        "android_client_info": {
+          "package_name": "com.example.carenest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBN-JsosiG-366yN339AeeqP5RRpIrnNXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
