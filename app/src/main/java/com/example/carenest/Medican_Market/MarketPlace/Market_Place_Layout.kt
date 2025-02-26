@@ -165,7 +165,7 @@ class Market_Place_Layout : Fragment() {
                         )
                         dataList_Products.add(dataclass)
 
-                        // add1(data.SchemesName,data.SchemesDiscription)
+//                         add1(data.SchemesName,data.SchemesDiscription)
                         add1(dataList_Products)
 
                     } else {
@@ -191,33 +191,21 @@ class Market_Place_Layout : Fragment() {
     private fun dataInitialize(){
         dataList_Products = arrayListOf<Medican_Product>()
 
-
-
-
         product_Name = arrayOf(
-
 
         )
         Product_Image = arrayOf(
 
-
         )
         Product_Discription = arrayOf(
-
-
-
-
 
         )
         Product_Price = arrayOf(
 
-
-
         )
         for(i in product_Name.indices){
 
-            val dataclass = Medican_Product(Product_Image[i],product_Name[i]
-                , Product_Price[i],null,Product_Discription[i],null)
+            val dataclass = Medican_Product(Product_Image[i],product_Name[i], Product_Price[i],null,Product_Discription[i],null)
             dataList_Products.add(dataclass)
 
         }

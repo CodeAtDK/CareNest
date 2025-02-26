@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.carenest.Medican_Market.Medican_Product
 import com.example.carenest.R
+import com.google.firebase.storage.FirebaseStorage
 
 class Adapter_Market_Place (private val dataList_for_Market_Place : ArrayList<Medican_Product>) :
     RecyclerView.Adapter<Adapter_Market_Place.MyViewHolder_Market_Place>()
@@ -42,26 +44,26 @@ class Adapter_Market_Place (private val dataList_for_Market_Place : ArrayList<Me
         Log.d("TAG", "Image URL: ${currentItem.product_name}")
         Log.d("TAG", "Image URL: ${currentItem.product_img_Id_Url}")
 
-       // val storageReference = FirebaseStorage.getInstance().reference.child(currentItem.product_img_Id_Url.toString()) // Replace with actual path
+        val storageReference = FirebaseStorage.getInstance().reference.child(currentItem.product_img_Id_Url.toString()) // Replace with actual path
 
-//        storageReference.downloadUrl.addOnSuccessListener { uri ->
-//            val imageUriString = uri.toString()
-//
-//            holder.productname.text = currentItem.product_name
-//            holder.productPrice.text = "$ " + currentItem.product_price.toString()
-//
-//            // Convert the URL string to a Uri object
-//            val imageUri = Uri.parse(imageUriString)
-//
-////            Glide.with(holder.itemView.context)
-////                .load(uri)
-////                .placeholder(R.drawable.loding)
-////                .error(R.drawable.error)
-////                .into(holder.productImage)
-//        }.addOnFailureListener { exception ->
-//            // Handle any errors during the download
-//            Log.e("TAG", "Image download failed: ${exception.message}")
-//        }
+        storageReference.downloadUrl.addOnSuccessListener { uri ->
+            val imageUriString = uri.toString()
+
+            holder.productname.text = currentItem.product_name
+            holder.productPrice.text = "₹ " + currentItem.product_price.toString()
+
+            // Convert the URL string to a Uri object
+            val imageUri = Uri.parse(imageUriString)
+
+            Glide.with(holder.itemView.context)
+                .load(uri)
+                .placeholder(R.drawable.download)
+                .error(R.drawable.download)
+                .into(holder.productImage)
+        }.addOnFailureListener { exception ->
+            // Handle any errors during the download
+            Log.e("TAG", "Image download failed: ${exception.message}")
+        }
     }
 
     override fun getItemCount(): Int {

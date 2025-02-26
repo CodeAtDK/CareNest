@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.example.carenest.Chating.user_list
 import com.example.carenest.HomeFragment
 import com.example.carenest.R
 import com.google.android.material.navigation.NavigationView
@@ -42,6 +43,18 @@ class HealthMainActivity : AppCompatActivity() , NavigationView.OnNavigationItem
         // ...
         // Initialize Firebase Auth
         auth = Firebase.auth
+
+        val userRole = intent.getStringExtra("role")
+        val userListFragment = user_list().apply {
+            arguments = Bundle().apply {
+                putString("role", userRole)
+            }
+        }
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, userListFragment)
+            .commit()
+
 
 
         val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)

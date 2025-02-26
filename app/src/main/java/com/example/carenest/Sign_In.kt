@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
+import com.example.carenest.HealthMain.HealthMainActivity
 import com.example.carenest.databinding.ActivitySignInBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -71,8 +72,8 @@ class Sign_In : AppCompatActivity() {
 
         if(user != null){
 
-//            val intent = Intent(this, FarmerMainActivity::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, HealthMainActivity::class.java)
+            startActivity(intent)
 
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
         }

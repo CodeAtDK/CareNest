@@ -33,6 +33,7 @@
         android:paddingTop="3dp"
         android:paddingBottom="3dp"
         android:textColorHint="#090909"
+
         app:layout_constraintBottom_toTopOf="@+id/sign_up_Last_Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -63,6 +64,7 @@
         android:paddingBottom="3dp"
         android:paddingLeft="9dp"
         android:hint=" Email Id"
+
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_Phone_No"
         tools:layout_editor_absoluteX="0dp" />
@@ -92,6 +94,7 @@
         android:paddingLeft="9dp"
         android:hint=" Password"
         android:password="true"
+
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_renter_password"
         tools:layout_editor_absoluteX="16dp" />

@@ -34,7 +34,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/Shop_card">
+                    android:id="@+id/ChatWithDoctor">
 
                     <ImageView
                         android:layout_width="150dp"
@@ -65,7 +65,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/jkbkjbk">
+                    android:id="@+id/Video_Call">
 
                     <ImageView
                         android:layout_width="150dp"
@@ -127,7 +127,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/weather_forecast_card">
+                    android:id="@+id/Health_Education">
 
                     <ImageView
                         android:layout_width="150dp"
@@ -158,7 +158,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/crop_suggestion_card">
+                    android:id="@+id/Sympytoms_Cheacker">
 
                     <ImageView
                         android:layout_width="150dp"

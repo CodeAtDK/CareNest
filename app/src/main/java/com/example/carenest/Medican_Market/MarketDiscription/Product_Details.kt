@@ -10,12 +10,13 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.example.carenest.HomeFragment
 import com.example.carenest.Medican_Market.Medicine_Shop_ViewModel
 import com.example.carenest.Order_And_Address_Confermation.Address_Confirmation_In_Buying_Process
 import com.example.carenest.R
 import com.example.carenest.databinding.FragmentProductDetailsBinding
-
+import com.google.firebase.storage.FirebaseStorage
 
 
 class Product_Details : Fragment() {
@@ -45,25 +46,25 @@ class Product_Details : Fragment() {
         }
         ViewModel_Prodduct.getImg().observe(viewLifecycleOwner) {
 
-//            val storageReference = FirebaseStorage.getInstance().reference.child(it)
+            val storageReference = FirebaseStorage.getInstance().reference.child(it)
 
-//            storageReference.downloadUrl.addOnSuccessListener { uri ->
-//                val imageUrl = uri.toString()
-//                Glide.with(this)
-//                    .load(imageUrl)
-//                    .placeholder(R.drawable.loding)
-//                    .error(R.drawable.error)
-//                    .into(binding.ProductMarketImage)
-//            }.addOnFailureListener { exception ->
-//
-//                Toast.makeText(thiscom.example.agriconnect.Farmer_Market.MarketDiscription.Product_Details.requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
-//            }
+            storageReference.downloadUrl.addOnSuccessListener { uri ->
+                val imageUrl = uri.toString()
+                Glide.with(this)
+                    .load(imageUrl)
+                    .placeholder(R.drawable.download)
+                    .error(R.drawable.download)
+                    .into(binding.ProductMarketImage)
+            }.addOnFailureListener { exception ->
+
+                Toast.makeText(this@Product_Details.requireContext(), "Failed to load image", Toast.LENGTH_SHORT).show()
+            }
 
 
         }
         ViewModel_Prodduct.getPrice().observe(viewLifecycleOwner) {
             val n = it.toString()
-            binding.ProductPrice.setText("$"+n)
+            binding.ProductPrice.setText("₹"+n)
         }
 
         binding.BuyNow.setOnClickListener(){
