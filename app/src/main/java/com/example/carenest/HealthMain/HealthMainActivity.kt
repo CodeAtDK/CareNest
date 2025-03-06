@@ -2,7 +2,9 @@ package com.example.carenest.HealthMain
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -118,18 +120,18 @@ class HealthMainActivity : AppCompatActivity() , NavigationView.OnNavigationItem
 //        super.onBackPressed()
 
 
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-            drawerLayout.closeDrawer(GravityCompat.START)
-        }
-        else{
-            onBackPressedDispatcher.onBackPressed()
-        }
-        replaceFragment(HomeFragment())
+//        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+//            drawerLayout.closeDrawer(GravityCompat.START)
+//        }
+//        else{
+//            onBackPressedDispatcher.onBackPressed()
+//        }
+//        replaceFragment(HomeFragment())
 //        System.exit(-1)
-
-     //   val frag = supportFragmentManager.findFragmentByTag(Home::class.java.simpleName)
-        // Toast.makeText(this,frag.toString(),Toast.LENGTH_SHORT).show()
-        // Log.d("TAG",frag.toString())
+//
+//        val frag = supportFragmentManager.findFragmentByTag(HomeFragment::class.java.simpleName)
+//         Toast.makeText(this,frag.toString(),Toast.LENGTH_SHORT).show()
+//         Log.d("TAG",frag.toString())
 
 
 

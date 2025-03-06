@@ -1,18 +1,23 @@
 package com.example.carenest
 
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils.replace
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.example.carenest.Chating.user_list
 import com.example.carenest.Health_Education.Fragments.Health_Education
+import com.example.carenest.Medican_Market.MarketPlace.Market_Place_Layout
+import com.example.carenest.Medican_Market.Medican_Product
 import com.example.carenest.Medican_Market.Medican_Shop
 import com.example.carenest.Symptom_Checker.SymtomChecker
 import com.example.carenest.VideoCallwithDoctor.VideoCallwithDoctor
@@ -33,7 +38,26 @@ class HomeFragment : Fragment() {
     private val currentUser = FirebaseAuth.getInstance().currentUser
     private val senderId = currentUser?.uid ?: "Unknown"
 
-
+//    interface OnAppExitListener {
+//
+//        fun onAppExit()
+//
+//    }
+//
+//
+//    private var exitlistener: OnAppExitListener? = null
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (context is OnAppExitListener) {
+//            exitlistener = context
+//        } else {
+//            throw RuntimeException("$context must implement OnAppExitListener")
+//        }
+//    }
+//    override fun onDetach() {
+//        super.onDetach()
+//        exitlistener = null
+//    }
 
 
     override fun onCreateView(
@@ -54,7 +78,7 @@ class HomeFragment : Fragment() {
                 )
                 addToBackStack(null)
             }
-            Toast.makeText(this@HomeFragment.requireActivity(),"Recommendation", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this@HomeFragment.requireActivity(),"Recommendation", Toast.LENGTH_SHORT).show()
         }
 
         binding.MedicineShop.setOnClickListener {
@@ -63,14 +87,14 @@ class HomeFragment : Fragment() {
                 setReorderingAllowed(true)
                 replace(
                     R.id.fragment_container,
-                    Medican_Shop::class.java,
+                    Market_Place_Layout::class.java,
                     null
                 ) // Replace with your FragmentContainerView's ID and the new Fragment class
                 addToBackStack(null)
 
             }
 
-            Toast.makeText(this@HomeFragment.requireActivity(),"IN MARKET PLACE", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@HomeFragment.requireActivity(),"IN MARKET PLACE", Toast.LENGTH_SHORT).show()
         }
         binding.SympytomsCheacker.setOnClickListener {
 
@@ -87,7 +111,7 @@ class HomeFragment : Fragment() {
 
             }
 
-            Toast.makeText(this@HomeFragment.requireActivity(),"In Symptom Checker", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@HomeFragment.requireActivity(),"In Symptom Checker", Toast.LENGTH_SHORT).show()
         }
         binding.ChatWithDoctor.setOnClickListener {
 
@@ -105,7 +129,7 @@ class HomeFragment : Fragment() {
 
             }
 
-            Toast.makeText(this@HomeFragment.requireActivity(),"In Chating", Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this@HomeFragment.requireActivity(),"In Chating", Toast.LENGTH_SHORT).show()
         }
 
         binding.VideoCall.setOnClickListener {
@@ -124,7 +148,21 @@ class HomeFragment : Fragment() {
 //
 //            }
 
-            Toast.makeText(this@HomeFragment.requireActivity(),"In video call", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@HomeFragment.requireActivity(),"Video Call feature will be available shortly", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.AddReports.setOnClickListener {
+
+            Toast.makeText(this@HomeFragment.requireActivity(),"Add Reports feature will be available shortly", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.DietAndNutrition.setOnClickListener {
+
+            Toast.makeText(this@HomeFragment.requireActivity(),"Diet and Nutrition feature will be available shortly", Toast.LENGTH_SHORT).show()
+        }
+        binding.AddTabletReminder.setOnClickListener {
+
+            Toast.makeText(this@HomeFragment.requireActivity(),"Add Tablet Reminder feature will be available shortly", Toast.LENGTH_SHORT).show()
         }
 
 
@@ -167,5 +205,30 @@ class HomeFragment : Fragment() {
             ?.replace(R.id.fragment_container, userListFragment)
             ?.addToBackStack(null)
             ?.commit()
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+//        requireActivity().onBackPressedDispatcher.addCallback(this,object : OnBackPressedCallback(true){
+
+//            override fun handleOnBackPressed() {
+//
+//                if(parentFragmentManager.findFragmentById(R.id.fragment_container) is HomeFragment) {
+////                    Log.d("Tag","${parentFragmentManager.findFragmentById(R.id.fragment_container)}")
+//
+//                    binding.cardViewExitapp.setVisibility(VISIBLE)
+//                }
+//
+//                else{
+//
+//                    isEnabled = false
+//                    requireActivity().onBackPressed()
+//                    isEnabled = true
+//                }
+//
+//            }
+//        })
+
     }
 }

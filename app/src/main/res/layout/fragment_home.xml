@@ -189,7 +189,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/government_schemes_card">
+                    android:id="@+id/DietAndNutrition">
 
                     <ImageView
                         android:layout_width="150dp"
@@ -221,7 +221,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/new_farming_Technique_card">
+                    android:id="@+id/AddTabletReminder">
 
                     <ImageView
                         android:layout_width="150dp"
@@ -253,7 +253,7 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/new_farming_crops_card">
+                    android:id="@+id/AddReports">
 
                     <ImageView
                         android:layout_width="150dp"

@@ -16,7 +16,7 @@ class Medicine_Shop_ViewModel : ViewModel(){
 
     fun setData(markettype: String){
 
-        Market_Type.value = markettype
+        Market_Type.value = "Equipments Market"
     }
 
     fun setName(name: String){

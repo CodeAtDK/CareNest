@@ -32,7 +32,6 @@ class Address_Confirmation_In_Buying_Process : Fragment() {
 
         val random = Random.nextInt(0, 1000000000)
         val orderid = Random.nextInt(0, 1000000000)
-        val productid = Random.nextInt(0, 1000000000)
 
         binding.BuyNowButtonOnAddressPage.setOnClickListener(){
 
@@ -47,7 +46,7 @@ class Address_Confirmation_In_Buying_Process : Fragment() {
                 binding.pincode.text.toString(),
                 binding.locality.text.toString(),
                 orderid.toString(),
-                productid.toString()
+                "1"
             )
             db.collection("order details").document("$random").set(city)
 

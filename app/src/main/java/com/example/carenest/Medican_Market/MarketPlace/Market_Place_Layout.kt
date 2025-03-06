@@ -12,6 +12,7 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.carenest.HomeFragment
 import com.example.carenest.Medican_Market.MarketDiscription.Product_Details
 import com.example.carenest.Medican_Market.Medican_Product
 import com.example.carenest.Medican_Market.Medican_Shop
@@ -53,6 +54,8 @@ class Market_Place_Layout : Fragment() {
         _binding = FragmentMarketPlaceLayoutBinding.inflate(inflater,container,false)
         Farmer_Market_Place_ViewModel = ViewModelProvider(requireActivity()).get(Medicine_Shop_ViewModel::class.java)
 
+        count("")
+
 
         return binding.root
     }
@@ -66,7 +69,7 @@ class Market_Place_Layout : Fragment() {
 
         Farmer_Market_Place_ViewModel.getData().observe(viewLifecycleOwner){
             binding.MarketId.setText(it.toString())
-            count(it.toString())
+            count("Equipments Market")
         }
 
 
@@ -129,7 +132,7 @@ class Market_Place_Layout : Fragment() {
 
         while(a < count+1) {
 
-            val docRef = db.collection("${n}" +"Farmer_Market").document("${a}")
+            val docRef = db.collection("Equipments MarketFarmer_Market").document("${a}")
             docRef.get().addOnSuccessListener { documentSnapshot ->
                 if (documentSnapshot.exists()) {
                     val data =
@@ -260,7 +263,9 @@ class Market_Place_Layout : Fragment() {
         var count : Int = 0
         Log.d("Tag idk ", "$n")
 
-        val collectionRef = db.collection("${n}Farmer_Market")
+        Log.d("Tag", " in count")
+
+        val collectionRef = db.collection("Equipments MarketFarmer_Market")
 
         collectionRef.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -297,7 +302,7 @@ class Market_Place_Layout : Fragment() {
                     setReorderingAllowed(true)
                     replace(
                         R.id.fragment_container,
-                        Medican_Shop::class.java,
+                        HomeFragment::class.java,
                         null
                     ) // Replace with your FragmentContainerView's ID and the new Fragment class
                     addToBackStack(null)
