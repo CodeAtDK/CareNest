@@ -1,136 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:background="@color/background"
+        android:fillViewport="true"
+        android:scrollbars="none">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <TextView
+            <!-- Title & Metadata Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingTop="5dp"
-                android:id="@+id/Government_Scheme_Discription_Name"
-                android:paddingRight="5dp"
-                android:text="Blog Title"
-                android:textAlignment="center"
-                android:textSize="25dp"
-                android:textStyle="bold" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/addtabletreminder"
-                android:id="@+id/Image_of_Blog"/>
-            <TextView
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_shield"
+                            app:tint="@color/accent_emerald" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="Medically Reviewed • CareNest Health"
+                            android:textColor="@color/accent_emerald"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/Government_Scheme_Discription_Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Article Title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Hero Image Card -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface_variant">
+
+                <ImageView
+                    android:id="@+id/Image_of_Blog"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Article Image" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Details & Summary Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Details"
-                android:paddingTop="30dp"
-                android:textAlignment="center"
-                android:textSize="17dp"
-                android:textStyle="bold"/>
+                android:layout_marginBottom="14dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/surface">
 
-            <TextView
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Key Overview"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/Government_Scheme_Discription_Discription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Overview details..."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginVertical="16dp"
+                        android:background="@color/divider" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full Details &amp; Guidelines"
+                        android:textColor="@color/primary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/BlogDiscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="Full description..."
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Watch Video Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/VideoLink"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:id="@+id/Government_Scheme_Discription_Discription"
-                android:paddingRight="5dp"
-                android:text="Scheme Discription"
-                android:textAlignment="center"
-                android:textSize="15dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Discription"
-                android:paddingTop="30dp"
-                android:textAlignment="center"
-                android:textSize="17dp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:id="@+id/BlogDiscription"
-                android:paddingRight="5dp"
-                android:text="Scheme Discription"
-                android:textAlignment="center"
-                android:textSize="15dp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Watch Video"
-                android:id="@+id/VideoLink"/>
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Benfits"-->
-<!--                android:paddingTop="30dp"-->
-<!--                android:textAlignment="center"-->
-<!--                android:textSize="17dp"-->
-<!--                android:textStyle="bold"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="5dp"-->
-<!--                android:paddingRight="5dp"-->
-<!--                android:text="Scheme Benefits"-->
-<!--                android:textAlignment="center"-->
-<!--                android:id="@+id/Government_Scheme_Benefits"-->
-<!--                android:textSize="15dp" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Eligibility"-->
-<!--                android:textAlignment="center"-->
-<!--                android:paddingTop="30dp"-->
-<!--                android:textSize="17dp"-->
-<!--                android:textStyle="bold"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Scheme Eligibility"-->
-<!--                android:id="@+id/Govenment_Scheme_Eligibility"-->
-<!--                android:textAlignment="center"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Documents Required"-->
-<!--                android:textAlignment="center"-->
-<!--                android:textSize="17dp"-->
-<!--                android:paddingTop="30dp"-->
-<!--                android:textStyle="bold"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Documents Required"-->
-<!--                android:id="@+id/Government_Scheme_Documents_Required"-->
-<!--                android:textAlignment="center"/>-->
-
-<!--            <Button-->
-<!--                android:layout_width="0dp"-->
-<!--                android:layout_height="0dp"-->
-<!--                android:layout_marginTop="20dp"-->
-<!--                android:text="Apply Now"-->
-<!--                android:id="@+id/Government_Scheme_Apply_Now_Button"/>-->
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="link"-->
-<!--                android:id="@+id/link"-->
-<!--                android:visibility="invisible"/>-->
+                android:layout_height="56dp"
+                android:layout_marginBottom="24dp"
+                android:text="Watch Video Guide"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:icon="@drawable/ic_play_arrow"
+                app:iconGravity="textStart"
+                app:iconTint="@color/white"
+                app:cornerRadius="16dp"
+                app:backgroundTint="@color/secondary"
+                app:elevation="4dp" />
 
         </LinearLayout>
-
     </ScrollView>
 </layout>

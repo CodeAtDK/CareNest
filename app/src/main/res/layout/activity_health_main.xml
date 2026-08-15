@@ -5,39 +5,49 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HealthMain.HealthMainActivity"
+    android:background="@color/background"
     android:fitsSystemWindows="true"
+    tools:context=".HealthMain.HealthMainActivity"
     tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:id="@+id/toolbar"
-            android:elevation="4dp"
-            android:background="#0CCEE7"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
+        <!-- Modern Healthcare Toolbar -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/surface"
+            android:elevation="2dp"
+            app:title="CareNest"
+            app:titleTextColor="@color/text_primary"
+            app:titleTextAppearance="@style/TextAppearance.Material3.TitleMedium"
+            app:navigationIconTint="@color/primary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        <!-- Fragment Host -->
         <FrameLayout
+            android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/fragment_container"/>
+            android:background="@color/background" />
     </LinearLayout>
 
+    <!-- Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
         android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/surface"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"
-        app:itemIconTint="#0C9AE7"
-        app:itemTextColor="#0CCEE7"/>
-
-
+        app:itemIconTint="@color/primary"
+        app:itemTextColor="@color/text_primary"
+        app:itemShapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+        app:itemShapeFillColor="@color/primary_container" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

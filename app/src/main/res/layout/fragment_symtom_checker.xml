@@ -1,556 +1,687 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Symptom_Checker.SymtomChecker">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:id="@+id/Symptoms_Input"
-        android:visibility="visible">
+        android:background="@color/background"
+        tools:context=".Symptom_Checker.SymtomChecker">
 
-
-        <!-- Basic Information -->
-    <TextView
-        android:id="@+id/tvBasicInfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Basic Information"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Age"
-        android:inputType="number"
-        android:maxLines="2"
-        android:maxLength="3"/>
-
-    <RadioGroup
-        android:id="@+id/rgGender"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbMale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Male" />
-        <RadioButton
-            android:id="@+id/rbFemale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Female" />
-        <RadioButton
-            android:id="@+id/rbOther"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Other" />
-    </RadioGroup>
-
-        <TextView
-            android:id="@+id/ttMedicalHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Medical History" />
-        <RadioGroup
-            android:id="@+id/rgMedicalHistory"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbMedicalHistoryYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbMedicalHistoryNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
 
-    <EditText
-        android:id="@+id/etMedicalHistory"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:hint="Medical History"
-        android:visibility="invisible"/>
-
-    <!-- Common Symptoms -->
-    <TextView
-        android:id="@+id/tvCommonSymptoms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Common Symptoms"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp" />
-
-    <TextView
-        android:id="@+id/tvFever"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fever" />
-    <RadioGroup
-        android:id="@+id/rgFever"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbFeverYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbFeverNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvCough"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cough" />
-    <RadioGroup
-        android:id="@+id/rgCough"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbCoughDry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dry" />
-        <RadioButton
-            android:id="@+id/rbCoughProductive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Productive" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvPain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pain" />
-    <RadioGroup
-        android:id="@+id/rgPain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbPainMild"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mild" />
-        <RadioButton
-            android:id="@+id/rbPainModerate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Moderate" />
-        <RadioButton
-            android:id="@+id/rbPainSevere"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Severe" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvFatigue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fatigue" />
-    <RadioGroup
-        android:id="@+id/rgFatigue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbFatigueYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbFatigueNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvShortnessOfBreath"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Shortness of Breath" />
-    <RadioGroup
-        android:id="@+id/rgShortnessOfBreath"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbShortnessOfBreathYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbShortnessOfBreathNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvHeadache"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Headache" />
-    <RadioGroup
-        android:id="@+id/rgHeadache"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbHeadacheYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbHeadacheNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvNauseaVomiting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nausea/Vomiting" />
-    <RadioGroup
-        android:id="@+id/rgNauseaVomiting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbNauseaVomitingYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbNauseaVomitingNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-
-    <TextView
-        android:id="@+id/tvDiarrheaConstipation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Diarrhea/Constipation" />
-    <RadioGroup
-        android:id="@+id/rgDiarrheaConstipation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/rbDiarrheaConstipationYes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yes" />
-        <RadioButton
-            android:id="@+id/rbDiarrheaConstipationNo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No" />
-    </RadioGroup>
-        <TextView
-            android:id="@+id/Rash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rash" />
-        <RadioGroup
-            android:id="@+id/rgRash"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbRashYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbRashNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-        <TextView
-            android:id="@+id/Dizziness"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dizziness" />
-        <RadioGroup
-            android:id="@+id/rgDizziness"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbDizzinessYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbDizzinessNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-<!--        Specific Symptoms-->
-        <TextView
-            android:id="@+id/tvSpecificSymtoms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Specific Symptoms"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/Chest_Pain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Chest Pain" />
-        <RadioGroup
-            android:id="@+id/rgChest_Pain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbChestPainYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbChestPainNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/AbdominalPain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Abdominal Pain" />
-        <RadioGroup
-            android:id="@+id/rgAbdominalPain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbAbdominalPainYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbAbdominalPainNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/Joint_Pain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Joint Pain" />
-        <RadioGroup
-            android:id="@+id/rgJoint_Pain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbJoint_PainYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbJoint_PainNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/Urinary_Systoms"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Urinary Systoms" />
-        <RadioGroup
-            android:id="@+id/rgUrinary_Systoms"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbUrinary_SystomsYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbUrinary_SystomsNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/Skin_Change"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Skin Change" />
-        <RadioGroup
-            android:id="@+id/rgSkin_Change"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbSkin_ChangeYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbSkin_ChangeNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/Vision_Pain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Vision Pain" />
-        <RadioGroup
-            android:id="@+id/rgVision_Pain"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbVision_PainYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbVision_PainNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/Hearing_Changes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hearing Changes" />
-        <RadioGroup
-            android:id="@+id/rgHearing_Changes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton
-                android:id="@+id/rbHearing_ChangesYes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Yes" />
-            <RadioButton
-                android:id="@+id/rbHearing_ChangesNo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="No" />
-        </RadioGroup>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Submit"
-            android:id="@+id/sumbmit_btn"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="center"
-            app:cardCornerRadius="15dp"
-            android:visibility="invisible"
-            android:id="@+id/SymptomsResult_output"
-
-            app:cardElevation="0dp">
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <!--                android:layout_margin="120dp">-->
-                <TextView
+                android:padding="16dp">
+
+                <!-- Diagnostic Questionnaire Input Form -->
+                <LinearLayout
+                    android:id="@+id/Symptoms_Input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="I Recommend seeing a pediatrician as soon as possible"
-                    android:textColor="#FF0000"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:paddingTop="30dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"/>
-                <TextView
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <!-- Header Banner Card -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/surface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_card_gradient_rose"
+                            android:orientation="horizontal"
+                            android:padding="16dp"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="44dp"
+                                android:layout_height="44dp"
+                                android:src="@drawable/ic_symptom_checker"
+                                app:tint="@color/accent_rose" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="AI Symptom Checker"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="Answer the questions below for instant medical triage &amp; AI insights."
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 1: Patient Basic Info -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/surface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <TextView
+                                android:id="@+id/tvBasicInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1. Patient Demographics"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <!-- Age -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:text="Patient Age (Years)"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_input_field"
+                                android:gravity="center_vertical"
+                                android:paddingHorizontal="14dp">
+
+                                <EditText
+                                    android:id="@+id/etAge"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:hint="e.g. 28"
+                                    android:inputType="number"
+                                    android:maxLength="3"
+                                    android:textColor="@color/text_primary"
+                                    android:textColorHint="@color/text_hint"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+                            <!-- Gender -->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:text="Gender"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <RadioGroup
+                                android:id="@+id/rgGender"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rbMale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Male"
+                                    android:textColor="@color/text_primary" />
+
+                                <RadioButton
+                                    android:id="@+id/rbFemale"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="16dp"
+                                    android:text="Female"
+                                    android:textColor="@color/text_primary" />
+
+                                <RadioButton
+                                    android:id="@+id/rbOther"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Other"
+                                    android:textColor="@color/text_primary" />
+                            </RadioGroup>
+
+                            <!-- Medical History -->
+                            <TextView
+                                android:id="@+id/ttMedicalHistory"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="14dp"
+                                android:text="Any Prior Medical Conditions?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <RadioGroup
+                                android:id="@+id/rgMedicalHistory"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:orientation="horizontal">
+
+                                <RadioButton
+                                    android:id="@+id/rbMedicalHistoryYes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="24dp"
+                                    android:text="Yes"
+                                    android:textColor="@color/text_primary" />
+
+                                <RadioButton
+                                    android:id="@+id/rbMedicalHistoryNo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="No"
+                                    android:textColor="@color/text_primary" />
+                            </RadioGroup>
+
+                            <EditText
+                                android:id="@+id/etMedicalHistory"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginTop="6dp"
+                                android:background="@drawable/bg_input_field"
+                                android:hint="Specify medical history (diabetes, asthma, BP, etc.)"
+                                android:padding="12dp"
+                                android:textColor="@color/text_primary"
+                                android:textColorHint="@color/text_hint"
+                                android:textSize="13sp"
+                                android:visibility="invisible" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 2: Common Symptoms -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="14dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/surface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <TextView
+                                android:id="@+id/tvCommonSymptoms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2. Core Symptoms"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <!-- Fever -->
+                            <TextView
+                                android:id="@+id/tvFever"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Fever / High Body Temperature?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgFever"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbFeverYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbFeverNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Cough -->
+                            <TextView
+                                android:id="@+id/tvCough"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Cough Type"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgCough"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbCoughDry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Dry Cough" />
+                                <RadioButton android:id="@+id/rbCoughProductive" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Productive / Wet" />
+                            </RadioGroup>
+
+                            <!-- Pain Intensity -->
+                            <TextView
+                                android:id="@+id/tvPain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="General Pain Intensity"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgPain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbPainMild" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="12dp" android:text="Mild" />
+                                <RadioButton android:id="@+id/rbPainModerate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="12dp" android:text="Moderate" />
+                                <RadioButton android:id="@+id/rbPainSevere" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Severe" />
+                            </RadioGroup>
+
+                            <!-- Fatigue -->
+                            <TextView
+                                android:id="@+id/tvFatigue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Excessive Fatigue / Weakness?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgFatigue"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbFatigueYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbFatigueNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Shortness of Breath -->
+                            <TextView
+                                android:id="@+id/tvShortnessOfBreath"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Shortness of Breath / Breathing Difficulty?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgShortnessOfBreath"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbShortnessOfBreathYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbShortnessOfBreathNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Headache -->
+                            <TextView
+                                android:id="@+id/tvHeadache"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Headache?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgHeadache"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbHeadacheYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbHeadacheNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Nausea -->
+                            <TextView
+                                android:id="@+id/tvNauseaVomiting"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Nausea or Vomiting?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgNauseaVomiting"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbNauseaVomitingYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbNauseaVomitingNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Diarrhea -->
+                            <TextView
+                                android:id="@+id/tvDiarrheaConstipation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Diarrhea or Constipation?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgDiarrheaConstipation"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbDiarrheaConstipationYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbDiarrheaConstipationNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Rash -->
+                            <TextView
+                                android:id="@+id/Rash"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Skin Rash / Itching?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgRash"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbRashYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbRashNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Dizziness -->
+                            <TextView
+                                android:id="@+id/Dizziness"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Dizziness or Lightheadedness?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgDizziness"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbDizzinessYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbDizzinessNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Card 3: Specific & Severe Symptoms -->
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="2dp"
+                        app:cardBackgroundColor="@color/surface">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="18dp">
+
+                            <TextView
+                                android:id="@+id/tvSpecificSymtoms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3. Specific Vitals"
+                                android:textColor="@color/primary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <!-- Chest Pain -->
+                            <TextView
+                                android:id="@+id/Chest_Pain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="Chest Pain or Pressure?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgChest_Pain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbChestPainYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbChestPainNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Abdominal Pain -->
+                            <TextView
+                                android:id="@+id/AbdominalPain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Abdominal Pain or Cramping?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgAbdominalPain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbAbdominalPainYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbAbdominalPainNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Joint Pain -->
+                            <TextView
+                                android:id="@+id/Joint_Pain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Joint or Muscle Pain?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgJoint_Pain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbJoint_PainYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbJoint_PainNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Urinary Symptoms -->
+                            <TextView
+                                android:id="@+id/Urinary_Systoms"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Urinary Issues / Pain?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgUrinary_Systoms"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbUrinary_SystomsYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbUrinary_SystomsNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Skin Changes -->
+                            <TextView
+                                android:id="@+id/Skin_Change"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Skin Discoloration or Swelling?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgSkin_Change"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbSkin_ChangeYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbSkin_ChangeNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Vision -->
+                            <TextView
+                                android:id="@+id/Vision_Pain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Vision Changes or Eye Pain?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgVision_Pain"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbVision_PainYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbVision_PainNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                            <!-- Hearing -->
+                            <TextView
+                                android:id="@+id/Hearing_Changes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:text="Hearing Changes / Ear Pain?"
+                                android:textColor="@color/text_primary"
+                                android:textSize="13sp" />
+
+                            <RadioGroup
+                                android:id="@+id/rgHearing_Changes"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <RadioButton android:id="@+id/rbHearing_ChangesYes" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginEnd="20dp" android:text="Yes" />
+                                <RadioButton android:id="@+id/rbHearing_ChangesNo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="No" />
+                            </RadioGroup>
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <!-- Submit Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/sumbmit_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginBottom="24dp"
+                        android:text="Analyze Symptoms with AI"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="16dp"
+                        app:backgroundTint="@color/primary"
+                        app:elevation="4dp" />
+
+                </LinearLayout>
+
+                <!-- AI Diagnostic Results Screen -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/SymptomsResult_output"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:text="response"
-                    android:textColor="@color/black"
-                    android:id="@+id/tvSymptomsResult"/>
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    app:cardCornerRadius="24dp"
+                    app:cardElevation="8dp"
+                    app:cardBackgroundColor="@color/surface">
 
-                <Button
-                    android:id="@+id/SymptomsResult"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="GO Back to Home Page" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="24dp">
 
+                        <!-- Result Status Banner -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/bg_badge_coral"
+                            android:padding="16dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
 
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_symptom_checker"
+                                app:tint="@color/accent_rose" />
 
-            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:text="AI Clinical Assessment &amp; Triage"
+                                android:textColor="@color/accent_rose"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
 
+                        <TextView
+                            android:id="@+id/tvSymptomsResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:lineSpacingExtra="4dp"
+                            android:text="Analyzing your response..."
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp" />
 
-        </androidx.cardview.widget.CardView>
-        </RelativeLayout>
-    </ScrollView>
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/SymptomsResult"
+                            android:layout_width="match_parent"
+                            android:layout_height="52dp"
+                            android:layout_marginTop="28dp"
+                            android:text="Back to Dashboard"
+                            android:textColor="@color/white"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="14dp"
+                            app:backgroundTint="@color/primary" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+            </RelativeLayout>
+        </ScrollView>
+    </FrameLayout>
 </layout>

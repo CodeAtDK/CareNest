@@ -1,25 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/message_background_receiver"
-    android:padding="8dp"
-    android:layout_gravity="start">
+    android:paddingVertical="3dp">
 
-    <TextView
-        android:id="@+id/messageTextView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Message"
-        android:textColor="@android:color/black"
-        android:padding="8dp"/>
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/message_background_receiver"
+        android:elevation="1dp"
+        android:maxWidth="280dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp">
 
-    <TextView
-        android:id="@+id/timestampTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Timestamp"
-        android:textColor="@android:color/black"
-        android:textSize="10sp"/>
-</LinearLayout>
+        <TextView
+            android:id="@+id/messageTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="2dp"
+            android:text="Message Text"
+            android:textColor="@color/chat_receiver_text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/timestampTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:text="10:30 AM"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp" />
+    </LinearLayout>
+</RelativeLayout>

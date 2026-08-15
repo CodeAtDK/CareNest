@@ -1,5 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Core Brand Healthcare Palette -->
+    <color name="primary">#0E7490</color>
+    <color name="primary_variant">#0891B2</color>
+    <color name="primary_light">#06B6D4</color>
+    <color name="primary_dark">#155E75</color>
+    <color name="primary_container">#E0F2FE</color>
+    <color name="on_primary_container">#0C4A6E</color>
+
+    <color name="secondary">#0284C7</color>
+    <color name="secondary_container">#BAE6FD</color>
+    <color name="on_secondary_container">#0369A1</color>
+
+    <!-- Accent Highlights -->
+    <color name="accent_teal">#14B8A6</color>
+    <color name="accent_emerald">#10B981</color>
+    <color name="accent_emerald_light">#D1FAE5</color>
+    <color name="accent_rose">#F43F5E</color>
+    <color name="accent_rose_light">#FFE4E6</color>
+    <color name="accent_indigo">#6366F1</color>
+    <color name="accent_indigo_light">#EEF2FF</color>
+    <color name="accent_amber">#F59E0B</color>
+    <color name="accent_amber_light">#FEF3C7</color>
+    <color name="accent_cyan_light">#CFFAFE</color>
+    <color name="accent_purple">#8B5CF6</color>
+    <color name="accent_purple_light">#EDE9FE</color>
+
+    <!-- Neutrals & Surfaces -->
+    <color name="background">#F8FAFC</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="surface_variant">#F1F5F9</color>
+    <color name="surface_tint">#E2E8F0</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="card_border">#E2E8F0</color>
+
+    <!-- Typography Slate Palette -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_hint">#94A3B8</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="divider">#E2E8F0</color>
+
+    <!-- Status & Feedback -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+    <color name="info">#3B82F6</color>
+
+    <!-- Chat Bubbles -->
+    <color name="chat_sender_bg">#0E7490</color>
+    <color name="chat_receiver_bg">#F1F5F9</color>
+    <color name="chat_receiver_text">#0F172A</color>
+
+    <!-- Base Standard -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
 </resources>

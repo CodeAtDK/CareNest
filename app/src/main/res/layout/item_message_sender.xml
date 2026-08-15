@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:paddingVertical="3dp">
 
     <LinearLayout
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/message_background_sender"
-        android:padding="8dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp">
+        android:layout_marginStart="64dp"
+        android:background="@drawable/message_background_sender"
+        android:elevation="1dp"
+        android:maxWidth="280dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp">
 
         <TextView
             android:id="@+id/messageTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Message"
-            android:textColor="@android:color/white"
-            android:padding="8dp"/>
+            android:lineSpacingExtra="2dp"
+            android:text="Message Text"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
 
-        <TextView
-            android:id="@+id/timestampTextView"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Timestamp"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"/>
+            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/seenTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Seen"
-            android:textColor="@android:color/white"
-            android:textSize="10sp"/>
+            <TextView
+                android:id="@+id/timestampTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10:30 AM"
+                android:textColor="#CCFFFFFF"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/seenTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Seen"
+                android:textColor="#CCFFFFFF"
+                android:textSize="10sp" />
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
